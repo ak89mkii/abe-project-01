@@ -38,7 +38,7 @@ class Footer extends Component {
                 </Card.Group>
                 <br></br>
                 <br></br>
-                <p>Haircut Shop © 2021</p>
+                <p>Abe © 2021</p>
                 </Segment>
             </div>
         )

@@ -3,19 +3,17 @@ import { Link } from "react-router-dom";
 import { Segment, Grid, Button} from 'semantic-ui-react'
 import '../../App.css';
 import Menu from '../../components/Menu/Menu.jsx'
-import Hair from '../../img/01.jpg'
 
 const Home = () => {
   
         return (
             <div>
-                <Menu />
                     <Grid>
                         <Grid.Column textAlign='center'>
-                            <h1 className='header'>A haircut for everyone...EVERYONE</h1>
+                            <h1 className='header'>Abe for Legal Experts & Analysts - $25</h1>
                             <Link to="/book">
                             <Button className='start' color='blue'>
-                                Book a Service
+                                Subscribe
                             </Button>
                             </Link>
                             <div className="frame">
