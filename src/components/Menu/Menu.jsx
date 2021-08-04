@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Segment, Menu } from 'semantic-ui-react'
+import { Divider, Menu } from 'semantic-ui-react'
 import '../../App.css';
 import Main from '../../img/01.png'
 
@@ -15,10 +15,10 @@ class Activator extends Component {
     render() {
         const { activeItem } = this.state
         return (
-            <div>
-                <Segment>
-                    <img className="photo" src={Main} />
-                </Segment>
+            <div className="color">
+                <br></br>                    
+                <img className="photo" src={Main} />
+                <Divider></Divider>
             </div>
         )
     }

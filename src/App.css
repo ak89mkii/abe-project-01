@@ -1,3 +1,21 @@
 .photo {
-  height: 50px;
+  height: 60px;
+}
+
+.color {
+  background-color: #edeede;
+}
+
+.amount {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 55px;
+}
+
+.image01 {
+  width: 1000px;
 }
