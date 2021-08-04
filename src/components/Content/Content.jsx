@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Segment, Header, Icon, Divider, Card, Grid, Button, Image } from 'semantic-ui-react'
+import { Segment, Header, Icon, Divider, Card, Grid, Button, Image, TransitionablePortal, Loader } from 'semantic-ui-react'
 import '../../App.css';
 import Pay from '../../img/02.png'
 
@@ -7,15 +7,24 @@ const square = { width: 175, height: 175 }
 
 class Content extends Component {
     state = {
-        
+        // Subscribe Button:
+        open: false
     }
 
+    // Subscribe Button:
+    handleClick = () => this.setState((prevState) => ({ open: !prevState.open }))
+    handleClose = () => this.setState({ open: false })
+
     render() {
+        // Subscribe Button:
+        const { open } = this.state
         return (
             <div className="footer">
+                {/* Content Card Segment: */}
                 <Grid centered columns={2} stackable>
                     <Grid.Column>
                         <Segment placeholder color='orange'>
+                        {/* Content Card: */}
                         <Card.Group centered>
                             <Card size="huge" fluid>
                             <br></br>
@@ -53,12 +62,31 @@ class Content extends Component {
                                     Enjoy content offering legal tips, research, and other references for surviving and even thriving in these trying times. Content can include cutting-edge legal topics, how to earn more money, and announcements on legal events and other opportunities.
                                     </Card.Description>
                                     <br></br>
-                                    <Button color='orange' size='massive'>Subscribe</Button>
+                                    {/* Subscribe Button: */}
+                                    <Button 
+                                        color='orange' 
+                                        size='massive'
+                                        content={open ? 'Close Skill List' : 'Open Skill List'}
+                                        onClick={this.handleClick}
+                                        >Subscribe
+                                    </Button>
                                     <br></br>
                                     <Grid centered>
                                         <Image src={Pay} size='medium' />
                                     </Grid>
                                 </Card.Content>
+                                {/* Subscribe Button: */}
+                                <TransitionablePortal onClose={this.handleClose} open={open}>
+                                    <Segment
+                                        inverted    
+                                        style={{ left: '60%', position: 'fixed', top: '50%', zIndex: 1000, color:'black'}}
+                                    >
+                                        <Header>
+                                            <Icon inverted loading name='circle notch' />
+                                            Will go to payment section such as PayPal.
+                                        </Header>
+                                    </Segment>
+                                </TransitionablePortal>
                             </Card>
                         </Card.Group>
                         <br></br>
