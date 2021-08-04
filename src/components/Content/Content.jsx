@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Segment, Header, Icon, Divider, Card, Grid, Button } from 'semantic-ui-react'
+import { Segment, Header, Icon, Divider, Card, Grid, Button, Image } from 'semantic-ui-react'
 import '../../App.css';
+import Pay from '../../img/02.png'
 
 const square = { width: 175, height: 175 }
 
@@ -53,6 +54,10 @@ class Content extends Component {
                                     </Card.Description>
                                     <br></br>
                                     <Button color='orange' size='massive'>Subscribe</Button>
+                                    <br></br>
+                                    <Grid centered>
+                                        <Image src={Pay} size='medium' />
+                                    </Grid>
                                 </Card.Content>
                             </Card>
                         </Card.Group>
