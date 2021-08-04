@@ -38,7 +38,7 @@ class Footer extends Component {
                 </Card.Group>
                 <br></br>
                 <br></br>
-                <p>Abe © 2021</p>
+                <p>©2021 Abe Legal, Inc. All rights reserved. </p>
                 </Segment>
             </div>
         )
