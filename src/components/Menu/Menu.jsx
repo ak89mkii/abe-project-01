@@ -18,13 +18,13 @@ class Activator extends Component {
         return (
             <div className="color">
                 <br></br>   
-                <Grid centered columns={2}>
+                <Grid centered columns={2} stackable>
                     <Grid.Row>
                         <Grid.Column>           
                             <img className="photo" src={Main} />
                         </Grid.Column> 
                         <Grid.Column>        
-                            <Menu secondary size='massive'>
+                            <Menu secondary size='large'>
                                 {/* Services */}
                                 <Dropdown item text='Services'>
                                     <Dropdown.Menu>
