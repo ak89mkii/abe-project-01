@@ -24,17 +24,20 @@ class Content extends Component {
                 <Grid centered columns={2} stackable>
                     <Grid.Column>
                         <Segment placeholder color='orange'>
-                        {/* Content Card: */}
+                        {/* Content Card: Top */}
                         <Card.Group centered>
                             <Card size="huge" fluid>
                             <br></br>
                             <br></br>
-                                <Card.Content>
                                 <Grid centered>
                                     <Icon name='briefcase' size='massive'/>
+                                </Grid>
+                                    <Grid centered>
                                     <h1 className="title">Abe for Legal Experts & Analysts</h1>
                                     <br></br>
                                     <br></br>
+                                    </Grid>
+                                    <Grid centered>
                                         <Segment centered color='orange' circular inverted style={square}>
                                             <Header as='h1' inverted>
                                                 <br></br>
@@ -44,7 +47,9 @@ class Content extends Component {
                                         </Segment>
                                     </Grid>
                                     <br></br>
-                                    <Divider></Divider>
+                                    <br></br>
+                                    {/* Content Card: Content */}
+                                    <Card.Content>
                                     <Card.Header>Earn Revenue from Servicing Abe Users</Card.Header>
                                     <Card.Description>
                                         When an individual or business books a consultation or seeks other assistance from Abe, you can expect us to contact you (based upon the areas of specialty and/or jurisdiction(s) you have listed in your profile). If you accept the matter, Abe Legal pays you $150-$250, depending upon the service provided. Consultations booked through Abe Legal typically last 45 min - 1 hour.
@@ -62,7 +67,7 @@ class Content extends Component {
                                     Enjoy content offering legal tips, research, and other references for surviving and even thriving in these trying times. Content can include cutting-edge legal topics, how to earn more money, and announcements on legal events and other opportunities.
                                     </Card.Description>
                                     <br></br>
-                                    {/* Subscribe Button: */}
+                                    {/* Subscribe Button: Button */}
                                     <Button 
                                         color='orange' 
                                         size='massive'
@@ -75,7 +80,7 @@ class Content extends Component {
                                         <Image src={Pay} size='medium' />
                                     </Grid>
                                 </Card.Content>
-                                {/* Subscribe Button: */}
+                                {/* Subscribe Button: Portal */}
                                 <TransitionablePortal onClose={this.handleClose} open={open}>
                                     <Segment
                                         inverted    
