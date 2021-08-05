@@ -11,7 +11,7 @@ class Content extends Component {
         open: false
     }
 
-    // Subscribe Button:
+    // Subscribe Button: Functions
     handleClick = () => this.setState((prevState) => ({ open: !prevState.open }))
     handleClose = () => this.setState({ open: false })
 

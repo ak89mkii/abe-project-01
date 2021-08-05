@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Divider, Menu, Dropdown, Grid } from 'semantic-ui-react'
+import { Divider, Menu, Dropdown, Grid, TransitionablePortal, Segment, Header, Icon } from 'semantic-ui-react'
 import '../../App.css';
 import Main from '../../img/01.png'
 
 class Activator extends Component {
     state = {
-        activeItem: undefined
+        open: false
     }
 
-    handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-
+    handleClick = () => this.setState((prevState) => ({ open: !prevState.open }))
+    handleClose = () => this.setState({ open: false })
+    
     render() {
         const { activeItem } = this.state
+        const { open } = this.state
         return (
             <div className="color">
                 <br></br>   
@@ -22,7 +24,7 @@ class Activator extends Component {
                             <img className="photo" src={Main} />
                         </Grid.Column> 
                         <Grid.Column>        
-                            <Menu secondary>
+                            <Menu secondary size='massive'>
                                 {/* Services */}
                                 <Dropdown item text='Services'>
                                     <Dropdown.Menu>
@@ -57,25 +59,36 @@ class Activator extends Component {
                                 </Dropdown>
                                 <Menu.Item
                                 name='team'
-                                active={activeItem === 'messages'}
-                                onClick={this.handleItemClick}
+                                active={activeItem === 'team'}
+                                onClick={this.handleClick}
                                 />
                                 <Menu.Item
                                 name='about us'
-                                active={activeItem === 'friends'}
-                                onClick={this.handleItemClick}
+                                active={activeItem === 'about us'}
+                                onClick={this.handleClick}
                                 />
                                 <Menu.Item
                                 name='contact'
-                                active={activeItem === 'messages'}
-                                onClick={this.handleItemClick}
+                                active={activeItem === 'contact'}
+                                onClick={this.handleClick}
                                 />
                                 <Menu.Item
                                 name='home'
-                                active={activeItem === 'friends'}
-                                onClick={this.handleItemClick}
+                                active={activeItem === 'home'}
+                                onClick={this.handleClick}
                                 />
-
+                                {/* Menu: Portal */}
+                                <TransitionablePortal onClose={this.handleClose} open={open}>
+                                    <Segment
+                                        inverted    
+                                        style={{ left: '60%', position: 'fixed', top: '7%', zIndex: 1000, color:'black'}}
+                                    >
+                                        <Header>
+                                            <Icon inverted loading name='circle notch' />
+                                            Will go to respective section.
+                                        </Header>
+                                    </Segment>
+                                </TransitionablePortal>
                             </Menu>
                         </Grid.Column>
                     </Grid.Row>
